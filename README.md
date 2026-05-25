@@ -1,3 +1,86 @@
+## Research Foundation
+
+This project is based on well-known academic and open-source work in financial NLP, earnings-call analysis, and machine-learning-based financial research.
+
+### 1. FinBERT: Financial Sentiment Analysis
+
+This project uses FinBERT as the main transformer-based sentiment model.
+
+FinBERT is a BERT-based language model adapted for financial text and fine-tuned for financial sentiment classification.
+
+**Reference:**
+
+Yang, Yi, Mark Christopher Siy Uy, and Allen Huang.  
+*FinBERT: A Pretrained Language Model for Financial Communications.*  
+2020.
+
+Paper:  
+https://arxiv.org/abs/2006.08097
+
+GitHub:  
+https://github.com/ProsusAI/finBERT
+
+Hugging Face Model:  
+https://huggingface.co/ProsusAI/finbert
+
+---
+
+### 2. Loughran-McDonald Financial Sentiment Dictionary
+
+This project compares FinBERT sentiment scores against a simpler dictionary-based financial sentiment baseline.
+
+The Loughran-McDonald dictionary is widely used in financial text analysis because general sentiment dictionaries often misclassify financial words. For example, words such as "liability" or "tax" may be negative in ordinary language but are neutral or context-dependent in finance.
+
+**Reference:**
+
+Loughran, Tim, and Bill McDonald.  
+*When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks.*  
+Journal of Finance, 2011.
+
+Paper:  
+https://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.2010.01625.x
+
+---
+
+### 3. Machine Learning for Trading Reference
+
+This project is also inspired by Stefan Jansen's open-source Machine Learning for Trading repository, especially the sections on word embeddings, earnings calls, SEC filings, and backtesting.
+
+**Reference:**
+
+Stefan Jansen.  
+*Machine Learning for Trading.*
+
+GitHub:  
+https://github.com/stefan-jansen/machine-learning-for-trading
+
+Relevant chapter:  
+https://github.com/stefan-jansen/machine-learning-for-trading/tree/main/16_word_embeddings
+
+---
+
+## How These References Are Used
+
+| Reference | How It Is Used In This Project |
+|---|---|
+| Yang, Uy & Huang (2020) | Provides the FinBERT model used for financial sentiment classification |
+| ProsusAI FinBERT GitHub | Provides the open-source FinBERT implementation and model background |
+| Loughran & McDonald (2011) | Provides the dictionary-based benchmark sentiment method |
+| Stefan Jansen ML4T | Inspires the earnings-call NLP and backtesting workflow |
+
+---
+
+## Methodology Summary
+
+This project follows a research-style workflow:
+
+1. Collect earnings call transcripts for selected public companies.
+2. Score each transcript using FinBERT.
+3. Score each transcript using a Loughran-McDonald dictionary baseline.
+4. Download stock prices around each earnings date.
+5. Calculate post-earnings forward returns over 1 to 5 trading days.
+6. Test whether transcript sentiment predicts future returns.
+7. Compare FinBERT sentiment performance against the dictionary baseline.
 # Earnings Call Sentiment Analysis with FinBERT
 
 A financial NLP project that analyzes earnings call transcripts using FinBERT, a finance-specific transformer model based on BERT. The project evaluates whether management sentiment during earnings calls can predict short-term post-earnings stock returns.
